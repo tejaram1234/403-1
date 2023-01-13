@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #head{
+            width: fit-content;
+            display: flex;
+            box-shadow: 2px 2px 5px 2px rgb(196, 192, 192);
+            padding: 5px 10px;
+        }
+        .innerdiv{
+            color: green;
+            margin-left: 10px;
+        }
+        #head2{
+            color : green;
+            box-shadow: 2px 2px 5px 2px rgb(196, 192, 192);
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1  id="head">Press Any Keyboard Key</h1>
+        <h1 id="head2"></h1>
+    </div>
+
+    <script>
+        document.addEventListener("keypress", (event)=>{
+            console.log(event);
+            var name = event.key
+            var charcode = event.charCode
+
+            let h1 = document.getElementById("head")
+            let h2 = document.getElementById("head2")
+            h1.innerHTML = `You Pressed <div class="innerdiv">     ${name}</div>`
+            h2.innerHTML = charcode
+        })
+    </script>
+</body>
+</html>
